@@ -58,7 +58,7 @@
 
     .input-popup {
       position: fixed;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.4);
       z-index: 2;
       top: 0;
       left: 0;
@@ -76,6 +76,11 @@
         border-radius: 5px;
         position: relative;
 
+        @include mobile {
+          width: 250px;
+          height: max-content;
+        }
+
         .close-btn {
           color: themed("textColorSoft");
           font-size: 20px;
@@ -92,7 +97,7 @@
         p {
           margin-bottom: 10px;
           color: themed("textColorSoft");
-          font-family: calibri;
+          font-family: "RubikRegular";
           font-size: 18px;
         }
 
@@ -142,13 +147,13 @@
             border-radius: 5px;
             height: 30px;
             transition-duration: 0.2s;
-            background-color: var(--button-bg);
+            background-color: themed("buttonBg");
             font-size: 16px;
             font-weight: 550;
           }
 
           button:hover {
-            background-color: var(--button-hover-bg);
+            background-color: themed("buttonBgHover");
           }
         }
       }
