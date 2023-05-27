@@ -16,13 +16,10 @@ import GALLERY from "../../media/icons/pic-upload.png";
 import USER1 from "../../media/images/user1.jpg";
 import USER2 from "../../media/images/user2.jpg";
 import USER3 from "../../media/images/user3.jpg";
-import USER4 from "../../media/images/user4.jpg";
 
 // Post Images
 import POSTIMG1 from "../../media/images/postimg1.jpg";
-import POSTIMG2 from "../../media/images/postimg2.jpg";
 import POSTIMG3 from "../../media/images/postimg3.jpg";
-import POSTIMG4 from "../../media/images/postimg4.png";
 
 import { Link } from "react-router-dom";
 
@@ -38,6 +35,7 @@ const PostDetails = () => {
     setOpenPopup(!openPopup);
   };
 
+  
   // For options popup
   const [openOptions, setOpenOptions] = useState(false);
   const toggleOptions = () => {
