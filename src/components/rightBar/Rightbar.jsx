@@ -30,10 +30,10 @@ const Rightbar = () => {
             <Link to="/about-us" className="links">
               About Us
             </Link>
-            <Link to="/terms" className="links">
+            <Link to="/terms-of-use" className="links">
               Terms of Use
             </Link>
-            <Link to="/adverts" className="links">
+            <Link to="/adverts-and-ads-policy" className="links">
               Advertisement and Ads Policy
             </Link>
           </div>
@@ -45,7 +45,7 @@ const Rightbar = () => {
             <Link to="/help-center" className="links">
               Help Center
             </Link>
-            <Link to="/content-policy" className="links">
+            <Link to="/contents-policy" className="links">
               Content Policy
             </Link>
           </div>

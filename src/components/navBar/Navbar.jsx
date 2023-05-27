@@ -58,11 +58,11 @@ const Navbar = () => {
                 <Link to="/settings/4" className="links">
                   <AiFillSetting className="icons" /> Settings
                 </Link>
-                <Link to="/advertisement" className="links">
+                <Link to="/create-ad" className="links">
                   <RiAdvertisementFill className="icons" />
-                  Advertisement
+                  Create Ads
                 </Link>
-                <Link to="/help" className="links">
+                <Link to="/help-center" className="links">
                   <MdOutlineHelp className="icons" /> Help And Feedback
                 </Link>
                 <Link to="/login" className="links">
@@ -90,11 +90,11 @@ const Navbar = () => {
                 <Link to="/settings/4" className="mobile-links">
                   <AiFillSetting className="mobile-icons" /> Settings
                 </Link>
-                <Link to="/advertisement" className="mobile-links">
+                <Link to="/create-ad" className="mobile-links">
                   <RiAdvertisementFill className="mobile-icons" />
-                  Advertisement
+                  Create Ads
                 </Link>
-                <Link to="/help" className="mobile-links">
+                <Link to="/help-center" className="mobile-links">
                   <MdOutlineHelp className="mobile-icons" /> Help And Feedback
                 </Link>
                 <Link to="/login" className="mobile-links">

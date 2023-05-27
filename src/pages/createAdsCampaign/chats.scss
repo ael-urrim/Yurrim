@@ -1,0 +1,24 @@
+@import "../../style.scss";
+
+.chats {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 40px;
+    font-family: sans-serif;
+    color: themed("textColor");
+    height: 100vh;
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    .chats-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 8px;
+    }
+  }
+}

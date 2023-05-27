@@ -1,11 +1,11 @@
 import "./chats.scss";
 
-const Messages = () => {
+const Chats = () => {
   return (
     <div className="chats">
-      <div className="chats-card">Messages now</div>
+      <div className="chats-card">Messages page</div>
     </div>
   );
-};
+}; 
 
-export default Messages;
+export default Chats;

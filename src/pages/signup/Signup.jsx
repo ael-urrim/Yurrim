@@ -9,7 +9,7 @@ const Signup = () => {
         <h3>Create an Account</h3>
         <p>Connect with the rest of the world</p>
       </div>
-      <form action="">
+      <form action="/login">
         <div className="input-field">
           <label htmlFor="">Username</label>
           <input type="text" />

@@ -8,6 +8,13 @@ import Leftbar from "./components/leftBar/Leftbar";
 import Rightbar from "./components/rightBar/Rightbar";
 import "./style.scss";
 
+// Fonts
+import "./fonts/Rubik-Light.ttf"
+import "./fonts/Rubik-Regular.ttf"
+import "./fonts/Rubik-Medium.ttf"
+import "./fonts/Rubik-SemiBold.ttf"
+import "./fonts/Rubik-Bold.ttf"
+
 // Pages
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
@@ -19,13 +26,13 @@ import Interactions from "./pages/interactions/Interactions";
 import Notifications from "./pages/notifications/Notifications";
 import Chats from "./pages/chats/Chats";
 import PostDetails from "./pages/postDetails/PostDetails";
-
-// Fonts
-import "./fonts/Rubik-Light.ttf"
-import "./fonts/Rubik-Regular.ttf"
-import "./fonts/Rubik-Medium.ttf"
-import "./fonts/Rubik-SemiBold.ttf"
-import "./fonts/Rubik-Bold.ttf"
+import AboutUs from "./pages/aboutUs/AboutUs";
+import CookiePolicy from "./pages/cookiePolicy/CookiePolicy";
+import ContentsPolicy from "./pages/contentsPolicy/ContentsPolicy";
+import HelpCenter from "./pages/helpCenter/HelpCenter";
+import TermsOfUse from "./pages/termsOfUse/TermsOfUse";
+import AdvertisementPolicy from "./pages/advertisementPolicy/AdvertisementPolicy";
+import RunAds from "./pages/runAds/RunAds";
 
 function App() {
   const { darkMode } = useContext(darkModeContext);
@@ -81,6 +88,34 @@ function App() {
         {
           path: "/post/:postid",
           element: <PostDetails />,
+        },
+        {
+          path: "/about-us",
+          element: <AboutUs />,
+        },
+        {
+          path: "/cookie-policy",
+          element: <CookiePolicy />,
+        },
+        {
+          path: "/help-center",
+          element: <HelpCenter />,
+        },
+        {
+          path: "/contents-policy",
+          element: <ContentsPolicy />,
+        },
+        {
+          path: "/terms-of-use",
+          element: <TermsOfUse />,
+        },
+        {
+          path: "/adverts-and-ads-policy",
+          element: <AdvertisementPolicy />,
+        },
+        {
+          path: "/create-ad",
+          element: <RunAds />,
         },
       ],
     },

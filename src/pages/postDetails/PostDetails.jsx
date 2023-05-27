@@ -149,6 +149,7 @@ const PostDetails = () => {
                 </Link>
               </div>
               <div
+              style={{display:"flex", alignItems:"baseline"}}
                 className="comments post-reactions"
                 title="Comment"
                 onClick={toggleModal}
@@ -241,7 +242,7 @@ const PostDetails = () => {
                     </Link>
                   </div>
                   <div
-                    className="comments post-reactions"
+                    className="comments post-reactions link"
                     title="Comment"
                     onClick={toggleModal}
                   >
