@@ -8,7 +8,6 @@
     padding: 20px 40px;
     font-family: sans-serif;
     color: themed("textColor");
-    height: 100vh;
 
     @include mobile {
       padding: 20px 10px;
@@ -19,6 +18,30 @@
       padding: 20px;
       border: 1px solid themed("border");
       border-radius: 8px;
+      overflow-y: scroll;
+      height: max-content;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      h2 {
+        font-family: "RubikBold";
+      }
+
+      hr {
+        margin: 10px 0;
+      }
+      .body {
+        h3 {
+          font-family: "RubikSemiBold";
+          margin-bottom: 10px;
+        }
+        p {
+          font-family: "RubikRegular";
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 }
