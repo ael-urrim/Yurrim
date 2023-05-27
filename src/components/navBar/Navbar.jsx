@@ -47,8 +47,9 @@ const Navbar = () => {
         <div className="profile-img" onClick={toggleDropDown}>
           <img src={PROFILE_IMG} alt="" />
         </div>
+      </div>
 
-        {openMenuDropdown && (
+      {openMenuDropdown && (
           <div className="overlay" onClick={toggleDropDown}>
             <div className="dropdown-links">
               <div className="dropdown">
@@ -104,7 +105,6 @@ const Navbar = () => {
             </div>
           </div>
         )}
-      </div>
     </div>
   );
 };

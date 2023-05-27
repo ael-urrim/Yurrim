@@ -116,126 +116,126 @@
         }
       }
 
-      .overlay {
+    }
+
+    .overlay {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0);
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.4s;
+
+      @include mobile {
+        display: none;
+      }
+
+      .dropdown-links {
         position: fixed;
-        background-color: rgba(0, 0, 0, 0);
-        z-index: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition-duration: 0.4s;
+        z-index: 88;
 
-        @include mobile {
-          display: none;
-        }
+        .dropdown {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: themed("cardColor");
+          padding: 10px;
+          border: themed("border");
+          border-radius: 6px;
+          width: 200px;
+          margin-top: -250px;
+          margin-left: 450px;
 
+          @include tablet {
+            margin-top: -520px;
+            margin-left: 180px;
+          }
 
-        .dropdown-links {
-          position: fixed;
-          z-index: 88;
-
-          .dropdown {
-            position: absolute;
+          .links {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background-color: themed("cardColor");
-            padding: 10px;
-            border: themed("border");
-            border-radius: 6px;
-            width: 200px;
-            margin-top: -250px;
-            margin-left: 450px;
+            align-items: center;
+            text-decoration: none;
+            color: themed("textColorSoft");
+            font-size: 16px;
+            font-family: "RubikRegular";
+            padding: 5px 10px;
+            transition-duration: 0.1s;
 
-            @include tablet {
-              margin-top: -520px;
-              margin-left: 180px;
+            .icons {
+              margin-right: 10px;
             }
+          }
 
-            .links {
-              display: flex;
-              align-items: center;
-              text-decoration: none;
-              color: themed("textColorSoft");
-              font-size: 16px;
-              font-family: "RubikRegular";
-              padding: 5px 10px;
-              transition-duration: 0.1s;
-
-              .icons {
-                margin-right: 10px;
-              }
-            }
-
-            .links:hover {
-              background-color: #087ca7;
-              color: whitesmoke;
-            }
+          .links:hover {
+            background-color: #087ca7;
+            color: whitesmoke;
           }
         }
       }
+    }
 
-      // Mobile Menu
-      .mobile-overlay {
+    // Mobile Menu
+    .mobile-overlay {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0);
+      z-index: 999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.4s;
+
+      @include mobile {
+        display: flex;
+      }
+
+      .mobile-dropdown-links {
         position: fixed;
-        background-color: rgba(0, 0, 0, 0);
-        z-index: 999;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        transition-duration: 0.4s;
+        z-index: 88;
 
-        @include mobile {
+        .mobile-dropdown {
+          position: absolute;
           display: flex;
-        }
+          flex-direction: column;
+          gap: 10px;
+          background-color: themed("cardColor");
+          padding: 10px;
+          border: themed("border");
+          border-radius: 6px;
+          width: 200px;
 
-        .mobile-dropdown-links {
-          position: fixed;
-          z-index: 88;
+          @include mobile {
+            margin-top: -355px;
+            margin-left: -40px;
+          }
 
-          .mobile-dropdown {
-            position: absolute;
+          .mobile-links {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background-color: themed("cardColor");
-            padding: 10px;
-            border: themed("border");
-            border-radius: 6px;
-            width: 200px;
+            align-items: center;
+            text-decoration: none;
+            color: themed("textColorSoft");
+            font-size: 16px;
+            font-family: "RubikRegular";
+            padding: 5px 10px;
+            transition-duration: 0.1s;
 
-            @include mobile {
-              margin-top: -355px;
-              margin-left: -32px;
+            .mobile-icons {
+              margin-right: 10px;
             }
+          }
 
-            .mobile-links {
-              display: flex;
-              align-items: center;
-              text-decoration: none;
-              color: themed("textColorSoft");
-              font-size: 16px;
-              font-family: "RubikRegular";
-              padding: 5px 10px;
-              transition-duration: 0.1s;
-
-              .mobile-icons {
-                margin-right: 10px;
-              }
-            }
-
-            .mobile-links:hover {
-              background-color: #087ca7;
-              color: whitesmoke;
-            }
+          .mobile-links:hover {
+            background-color: #087ca7;
+            color: whitesmoke;
           }
         }
       }
