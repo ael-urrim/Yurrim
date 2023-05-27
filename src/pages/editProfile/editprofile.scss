@@ -1,0 +1,136 @@
+@import "../../style.scss";
+
+.edit-profile {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 70px;
+    color: themed("textColorSoft");
+    min-height: 100vh;
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+
+    .edit-form {
+      background-color: themed("cardColor");
+      border: 1px solid themed("border");
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 100vw;
+
+      h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        font-family: "RubikSemiBold";
+      }
+
+      hr {
+        margin-bottom: 10px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+
+        .input-text {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+
+          .label {
+            h3 {
+              font-size: 16px;
+              color: themed("textColor");
+              font-family: "RubikRegular";
+            }
+
+            small {
+              font-family: "RubikRegular";
+            }
+          }
+
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 0 10px;
+            margin: 10px;
+          }
+
+          .input {
+            font-family: "RubikRegular";
+
+            label {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              padding: 5px 10px;
+              border-radius: 5px;
+              color: #fff;
+              background-color: themed("buttonBg");
+              cursor: pointer;
+              transition-duration: 0.3s;
+              font-family: "RubikSemiBold";
+
+              h3 {
+                font-size: 16px;
+              }
+
+              small {
+                color: themed("textColorSoft");
+              }
+            }
+
+            label:hover {
+              background-color: themed("buttonBgHover");
+            }
+
+            input {
+              width: 90%;
+              height: 20px;
+              border: themed("border");
+              outline: none;
+              background-color: themed("bgSoft");
+              padding: 7px 10px;
+              border-radius: 4px;
+            }
+
+            textarea {
+              resize: none;
+              border: themed("border");
+              outline: none;
+              background-color: themed("bgSoft");
+              padding: 7px 10px;
+              border-radius: 4px;
+            }
+          }
+        }
+
+        button {
+          width: 50%;
+          padding: 10px 15px;
+          border: none;
+          background-color: themed("buttonBg");
+          border-radius: 5px;
+          color: white;
+          font-size: 16px;
+          font-weight: 550;
+          cursor: pointer;
+          transition-duration: 0.3s;
+        }
+
+        button:hover {
+          background-color: themed("buttonBgHover");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,454 @@
+@import "../../style.scss";
+
+.post-details {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 70px;
+    
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    .posts-card {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: themed("border");
+      border-radius: 8px;
+      margin-bottom: 20px;
+
+      .post {
+        display: flex;
+        gap: 5px;
+
+        .left {
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 0 10px;
+            object-fit: cover;
+          }
+        }
+
+        .right {
+          .upper {
+            .user-info {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              position: relative;
+
+              .name {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 3px;
+
+                .display-name {
+                  display: flex;
+                  align-items: center;
+
+                  .link {
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: themed("textColor");
+                    margin-bottom: 5px;
+                    font-family: "RubikSemiBold";
+                  }
+
+                  .link:hover {
+                    text-decoration: underline;
+                  }
+
+                  img {
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+
+                .time {
+                  color: themed("textColorSoft");
+                  font-size: 12px;
+                  font-family: "RubikLight";
+                }
+              }
+
+              .options {
+                cursor: pointer;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                color: themed("textColor");
+                border-radius: 50%;
+              }
+
+              .options:hover {
+                background-color: themed("bgSoft");
+                border: themed("border");
+              }
+
+              .options-popup {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+                background-color: themed("cardColor");
+                z-index: 55;
+                position: absolute;
+                border: 1px solid themed("textColorSoft");
+                border-radius: 4px;
+                right: 0;
+                top: 50px;
+
+                .links {
+                  color: themed("textColorSoft");
+                  text-decoration: none;
+                  padding: 5px 8px;
+                  border-radius: 3px;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                }
+
+                .links:hover {
+                  background-color: themed("bgSoft");
+                }
+              }
+            }
+          }
+
+          .middle {
+            width: 93%;
+            margin-left: 9px;
+
+            .post-text {
+              font-size: 16px;
+              margin-bottom: 10px;
+              color: themed("textColor");
+              font-family: "RubikRegular";
+            }
+
+            .post-img {
+              img {
+                width: 80%;
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+          .bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 70%;
+            gap: 20px;
+
+            .post-reactions {
+              font-size: 13px;
+              color: themed("textColorSoft");
+              cursor: pointer;
+              padding: 7px;
+              border-radius: 5px;
+
+              .link {
+                color: themed("textColorSoft");
+                text-decoration: none;
+
+                .icon {
+                  font-size: 20px;
+                }
+              }
+
+              .icon {
+                font-size: 20px;
+              }
+            }
+
+            .post-reactions:hover {
+              background-color: themed("bgSoft");
+            }
+          }
+        }
+      }
+
+      hr {
+        margin-bottom: 10px;
+      }
+
+      .post-comment {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .comments {
+          display: flex;
+          align-items: flex-start;
+
+          .left {
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 0 10px;
+              object-fit: cover;
+            }
+          }
+
+          .right {
+            .upper {
+              margin-top: -10px;
+              .user-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+
+                .name {
+                  display: flex;
+                  align-items: flex-start;
+                  flex-direction: column;
+                  gap: 3px;
+
+                  .display-name {
+                    display: flex;
+                    align-items: center;
+
+                    .link {
+                      font-size: 16px;
+                      font-weight: 600;
+                      text-decoration: none;
+                      color: themed("textColor");
+                      margin-bottom: 5px;
+                      font-family: "RubikBold";
+                    }
+
+                    .link:hover {
+                      text-decoration: underline;
+                    }
+
+                    img {
+                      width: 20px;
+                      height: 20px;
+                    }
+                  }
+
+                  .time {
+                    color: themed("textColorSoft");
+                    font-size: 12px;
+                    font-family: "RubikLight";
+                  }
+                }
+
+                .options {
+                  cursor: pointer;
+                  padding: 10px;
+                  display: flex;
+                  align-items: center;
+                  color: themed("textColor");
+                  border-radius: 50%;
+                }
+
+                .options:hover {
+                  background-color: themed("bgSoft");
+                  border: themed("border");
+                }
+
+                .options-popup {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  padding: 10px;
+                  background-color: themed("cardColor");
+                  z-index: 55;
+                  position: absolute;
+                  border: 1px solid themed("textColorSoft");
+                  border-radius: 4px;
+                  right: 0;
+                  top: 50px;
+
+                  .links {
+                    color: themed("textColorSoft");
+                    text-decoration: none;
+                    padding: 5px 8px;
+                    border-radius: 3px;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                  }
+
+                  .links:hover {
+                    background-color: themed("bgSoft");
+                  }
+                }
+              }
+            }
+
+            .middle {
+              width: 93%;
+              margin-left: 9px;
+
+              .post-text {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: themed("textColor");
+                font-family: "RubikRegular";
+              }
+
+              .post-img {
+                img {
+                  width: 80%;
+                  margin-bottom: 10px;
+                }
+              }
+            }
+
+            .bottom {
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              width: 70%;
+              gap: 20px;
+
+              .post-reactions {
+                font-size: 13px;
+                color: themed("textColorSoft");
+                cursor: pointer;
+                padding: 7px;
+                border-radius: 5px;
+
+                .link {
+                  color: themed("textColorSoft");
+                  text-decoration: none;
+
+                  .icon {
+                    font-size: 20px;
+                  }
+                }
+
+                .icon {
+                  font-size: 20px;
+                }
+              }
+
+              .post-reactions:hover {
+                background-color: themed("bgSoft");
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .input-popup {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.7s ease forwards;
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .input-card {
+        padding: 20px;
+        background-color: themed("cardColor");
+        width: 450px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        position: relative;
+
+        .close-btn {
+          color: themed("textColorSoft");
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+          padding: 3px;
+          border: 1px solid themed("borderTwo");
+          margin: 0;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+
+        p {
+          margin-bottom: 10px;
+          color: themed("textColorSoft");
+          font-family: calibri;
+          font-size: 18px;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .input-field {
+            width: 90%;
+
+            textarea {
+              resize: none;
+              width: 100%;
+              outline: none;
+              padding: 10px;
+              background-color: themed("addPost");
+              border: 1px solid themed("border");
+              border-radius: 8px;
+              color: themed("textColor");
+            }
+          }
+
+          .image-field {
+            display: flex;
+            align-items: self-end;
+            gap: 10px;
+
+            img {
+              width: 35px;
+              height: 35px;
+            }
+
+            .add-location {
+              display: flex;
+              align-items: center;
+              font-size: 40px;
+              cursor: pointer;
+              color: themed("iconsColor");
+            }
+          }
+
+          button {
+            cursor: pointer;
+            color: #fff;
+            border: themed("border");
+            border-radius: 5px;
+            height: 30px;
+            transition-duration: 0.2s;
+            background-color: var(--button-bg);
+            font-size: 16px;
+            font-weight: 550;
+          }
+
+          button:hover {
+            background-color: var(--button-hover-bg);
+          }
+        }
+      }
+    }
+  }
+}

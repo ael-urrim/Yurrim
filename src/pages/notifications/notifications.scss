@@ -1,0 +1,83 @@
+@import "../../style.scss";
+
+.notifications {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 70px;
+    color: themed("textColor");
+    height: 100vh;
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+
+    .notifications-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 8px;
+      height: max-content;
+
+      .notif-top {
+        font-family: "RubikMedium";
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 550;
+
+        .notif-settings {
+          .link {
+            color: themed("textColor");
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            gap: 0;
+            align-items: baseline;
+            border-radius: 50%;
+          }
+
+          .link:hover {
+            background-color: themed("bgSoft");
+          }
+        }
+      }
+
+      hr {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .notif-body {
+        font-family: "RubikRegular";
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: themed("textColorSoft");
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 3px;
+
+          h3 {
+            font-size: 14px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+
+        .link:hover {
+          background-color: themed("bgSoft");
+        }
+      }
+    }
+  }
+}

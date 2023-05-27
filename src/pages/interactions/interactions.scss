@@ -1,0 +1,83 @@
+@import "../../style.scss";
+
+.interactions {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 70px;
+    font-family: "RubikRegular";
+    color: themed("textColor");
+    height: 100vh;
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+    
+    @include tablet {
+      padding: 20px;
+  }
+
+    .interactions-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 8px;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .title {
+          padding: 5px 10px;
+          border-radius: 4px 4px 0 0;
+          font-weight: 550;
+          cursor: pointer;
+          transition-duration: 0.3s;
+          font-family: "RubikBold";
+        }
+
+        .title.active {
+          border-bottom: 1px solid themed("textColor");
+        }
+
+        .title:hover {
+          background-color: themed("bgSoft");
+          border-bottom: 1px solid themed("textColor");
+        }
+      }
+
+      hr {
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+
+      .body {
+        transition-duration: 0.3s;
+
+        .tab-heading {
+          margin-left: 20px;
+        }
+
+        .tab-content {
+          display: none;
+          animation: fadeIn 0.7s ease forwards;
+        }
+
+        .tab-content:first-child {
+          display: block;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

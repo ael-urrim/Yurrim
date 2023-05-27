@@ -1,0 +1,157 @@
+@import "../../style.scss";
+
+.home {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 70px;
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    @include tablet {
+      padding: 20px;
+  }
+
+    .addpost-card {
+      background-color: themed("cardColor");
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 1px solid themed("border");
+      border-radius: 8px;
+      padding: 20px;
+      font-family: "RubikMedium";
+      margin-bottom: 20px;
+
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 0 10px;
+        object-fit: cover;
+
+        @include mobile {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .add-post {
+        border: 1px solid themed("border");
+        outline: none;
+        height: 20px;
+        width: 80%;
+        padding: 10px;
+        background-color: themed("addPost");
+        border-radius: 8px;
+        cursor: pointer;
+
+        p {
+          font-family: calibri;
+          font-size: 16px;
+          color: themed("inputColor");
+        }
+      }
+    }
+
+    .input-popup {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .input-card {
+        padding: 20px;
+        background-color: themed("cardColor");
+        width: 450px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        position: relative;
+
+        .close-btn {
+          color: themed("textColorSoft");
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+          padding: 3px;
+          border: 1px solid themed("borderTwo");
+          margin: 0;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+
+        p {
+          margin-bottom: 10px;
+          color: themed("textColorSoft");
+          font-family: calibri;
+          font-size: 18px;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .input-field {
+            width: 90%;
+
+            textarea {
+              resize: none;
+              width: 100%;
+              outline: none;
+              padding: 10px;
+              background-color: themed("addPost");
+              border: 1px solid themed("border");
+              border-radius: 8px;
+              color: themed("textColor");
+            }
+          }
+
+          .image-field {
+            display: flex;
+            align-items: self-end;
+            gap: 10px;
+
+            img {
+              width: 35px;
+              height: 35px;
+            }
+
+            .add-location {
+              display: flex;
+              align-items: center;
+              font-size: 40px;
+              cursor: pointer;
+              color: themed("iconsColor");
+            }
+          }
+
+          button {
+            cursor: pointer;
+            color: #fff;
+            border: themed("border");
+            border-radius: 5px;
+            height: 30px;
+            transition-duration: 0.2s;
+            background-color: var(--button-bg);
+            font-size: 16px;
+            font-weight: 550;
+          }
+
+          button:hover {
+            background-color: var(--button-hover-bg);
+          }
+        }
+      }
+    }
+  }
+}

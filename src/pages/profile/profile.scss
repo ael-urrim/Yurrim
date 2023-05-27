@@ -1,0 +1,197 @@
+@import "../../style.scss";
+
+.profile {
+    @include themify($themes){
+        flex: 2;
+        background-color: themed("bgSoft");
+        margin-top: -25px;
+        padding: 20px 70px;
+        
+        @include mobile {
+            padding: 20px 10px;
+          }
+
+        .profile-top {
+            background-color: themed("cardColor");
+            padding: 20px;
+            border: 1px solid themed("border");
+            border-radius: 8px;
+            margin-bottom: 20px;
+
+            .profile-user-info {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                img {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                }
+
+                .user-details {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+    
+                    .display_name {
+                        display: flex;
+                        align-items: center;
+                        font-size: 17px;
+                        font-weight: 550;
+                        color: themed("textColor");
+                        font-family: "RubikSemiBold";
+                        margin-bottom: 2px;
+    
+                        img {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+    
+                    .user-name {
+                        color: themed("textColorSoft");
+                        font-size: 15px;
+                        font-weight: 530;
+                        margin-bottom: 10px;
+                        font-family: "RubikLight";
+                    }
+    
+                    .edit-btn {
+                        font-family: "RubikSemiBold";
+                        .link {
+                            display: flex;
+                            align-items: center;
+                            text-align: center;
+                            gap: 10px;
+                            font-weight: 600;
+                            text-decoration: none;
+                            color: #fff;
+                            padding: 10px;
+                            border-radius: 6px;
+                            background-color: themed("buttonBg");
+                            transition-duration: 0.2s;
+                            width: 70%;
+    
+                            .icon {
+                                font-weight: 700;
+                                font-size: 18px;
+                            }
+                        }
+                        .link:hover {
+                            background-color: themed("buttonBgHover");
+                        }
+                    }
+                }
+            }
+
+            
+
+            .profile-activities {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                color: themed("textColorSoft");
+                margin-bottom: 20px;
+                font-family: "RubikRegular";
+
+                strong {
+                    font-weight: 550;
+                    color: themed("textColor");
+                }
+            }
+
+            .user-bio {
+                color: themed("textColorSoft");
+                font-size: 14px;
+                font-weight: 550;
+                font-family: "RubikRegular";
+            }
+        }
+
+        .switch-btn {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            background-color: themed("cardColor");
+            padding: 20px;
+            border: 1px solid themed("border");
+            border-radius: 8px;
+            font-family: "RubikBold";
+            margin-bottom: 5px;
+
+            .title {
+                padding: 5px 10px;
+                border-radius: 4px 4px 0 0;
+                font-weight: 550;
+                cursor: pointer;
+                transition-duration: 0.3s;
+            }
+
+            .title.active {
+                border-bottom: 1px solid themed("textColor");
+            }
+
+            .title:hover {
+                background-color: themed("bgSoft");
+                border-bottom: 1px solid themed("textColor");
+            }
+
+            p {
+                padding: 7px 15px;
+                cursor: pointer;
+                color: themed("textColor");
+                transition-duration: 0.2s;
+                border-radius: 4px;
+            }
+            
+            p:hover {
+                background-color: themed("bgSoft");
+            }
+        }
+
+        .body {
+            background-color: themed("cardColor");
+            padding: 20px;
+            border: 1px solid themed("border");
+            border-radius: 8px;
+            font-family: sans-serif;
+            margin-bottom: 5px;
+
+            .tab-content {
+                display: none;
+                animation: fadeIn 0.7s ease forwards;
+            }
+                
+            .tab-content:first-child {
+                display: block;
+            }
+                
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .photos {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+
+                img {
+                    width: 120px;
+                    height: 120px;
+                    object-fit: cover;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+
