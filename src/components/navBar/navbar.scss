@@ -114,6 +114,16 @@
             height: 30px;
           }
         }
+        
+        img:focus {
+          outline: none;
+          background-color: transparent;
+        }
+        
+        img:active {
+          outline: none !important;
+          background-color: transparent !important;
+        }
       }
 
     }

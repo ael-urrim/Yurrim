@@ -58,6 +58,10 @@
                   font-size: 14px;
                 }
               }
+              
+              .link:focus {
+                background-color: transparent;
+              }
 
               .link:hover {
                 text-decoration: underline;
