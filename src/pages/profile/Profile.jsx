@@ -6,7 +6,7 @@ import USER2 from "../../media/images/user2.jpg";
 import USER3 from "../../media/images/user3.jpg";
 import USER4 from "../../media/images/user4.jpg";
 
-import { TfiWrite } from "react-icons/tfi";
+
 import { Link } from "react-router-dom";
 import VERIFIED from "../../media/icons/verified.png";
 import Posts from "../../components/posts/Posts";
@@ -116,8 +116,11 @@ const Profile = () => {
             <div className="user-name">@samuel</div>
             <div className="edit-btn">
               <Link to="/edit-profile/2" className="link">
-                <TfiWrite className="icon" />
                 Edit Profile
+              </Link>
+
+              <Link to="/edit-profile/2" className="link">
+                Unfollow
               </Link>
             </div>
           </div>

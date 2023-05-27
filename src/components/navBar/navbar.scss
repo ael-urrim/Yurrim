@@ -70,23 +70,6 @@
 
       @include mobile {
         gap: 20px;
-        margin-left: -10px;
-        padding-right: 0;
-      }
-
-      .log-in {
-        padding: 10px 15px;
-        background-color: var(--button-bg);
-        border-radius: 7px;
-        text-decoration: none;
-        transition-duration: 0.3s;
-        color: #fff;
-        font-weight: 600;
-        font-size: 17px;
-      }
-
-      .log-in:hover {
-        background-color: var(--button-hover-bg);
       }
 
       .messages {
@@ -224,8 +207,8 @@
           width: 200px;
 
           @include mobile {
-            margin-top: -355px;
-            margin-left: -40px;
+            margin-top: -280px;
+            margin-left: -50px;
           }
 
           .mobile-links {

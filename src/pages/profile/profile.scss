@@ -33,6 +33,7 @@
                     display: flex;
                     flex-direction: column;
                     margin-bottom: 20px;
+                    width: 95%;
     
                     .display_name {
                         display: flex;
@@ -58,25 +59,25 @@
                     }
     
                     .edit-btn {
-                        font-family: "RubikSemiBold";
+                        font-family: "RubikRegular";
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
                         .link {
                             display: flex;
                             align-items: center;
                             text-align: center;
                             gap: 10px;
-                            font-weight: 600;
+                            font-weight: 500;
+                            font-size: 16px;
                             text-decoration: none;
                             color: #fff;
                             padding: 10px;
-                            border-radius: 6px;
+                            border-radius: 5px;
                             background-color: themed("buttonBg");
                             transition-duration: 0.2s;
-                            width: 70%;
-    
-                            .icon {
-                                font-weight: 700;
-                                font-size: 18px;
-                            }
+                            width: 90px;
                         }
                         .link:hover {
                             background-color: themed("buttonBgHover");
