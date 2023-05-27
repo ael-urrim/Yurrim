@@ -126,19 +126,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 20;
+        transition-duration: 0.4s;
 
         @include mobile {
           display: none;
         }
 
-        @include tablet {
-          top: -670px;
-          left: -530px;
-        }
 
         .dropdown-links {
-          position: relative;
+          position: fixed;
           z-index: 88;
 
           .dropdown {
@@ -150,10 +146,14 @@
             padding: 10px;
             border: themed("border");
             border-radius: 6px;
-            position: absolute;
             width: 200px;
-            margin-top: -190px;
+            margin-top: -250px;
             margin-left: 450px;
+
+            @include tablet {
+              margin-top: -240px;
+              margin-left: 110px;
+            }
 
             .links {
               display: flex;
@@ -180,9 +180,9 @@
 
       // Mobile Menu
       .mobile-overlay {
-        position: absolute;
+        position: fixed;
         background-color: rgba(0, 0, 0, 0);
-        z-index: 0;
+        z-index: 999;
         top: 0;
         left: 0;
         right: 0;
@@ -190,17 +190,14 @@
         display: none;
         align-items: center;
         justify-content: center;
+        transition-duration: 0.4s;
 
         @include mobile {
           display: flex;
         }
 
-        // @include tablet {
-        //   display: none;
-        // }
-
         .mobile-dropdown-links {
-          position: relative;
+          position: fixed;
           z-index: 88;
 
           .mobile-dropdown {
@@ -212,12 +209,11 @@
             padding: 10px;
             border: themed("border");
             border-radius: 6px;
-            position: absolute;
             width: 200px;
 
             @include mobile {
-              margin-top: 35px;
-              margin-left: -145px;
+              margin-top: -240px;
+              margin-left: 10px;
             }
 
             .mobile-links {
