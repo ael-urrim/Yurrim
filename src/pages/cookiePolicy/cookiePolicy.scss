@@ -14,9 +14,13 @@
       padding: 20px 10px;
     }
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .cookie-policy-card {
       background-color: themed("cardColor");
-      padding: 30px;
+      padding: 20px 40px;
       border: 1px solid themed("border");
       border-radius: 8px;
       text-align: justify;
@@ -29,9 +33,10 @@
 
       h2 {
         font-family: "RubikBold";
+        font-size: 16px;
 
         @include mobile {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
 
@@ -43,18 +48,14 @@
         h3 {
           font-family: "RubikSemiBold";
           margin-bottom: 10px;
+          font-size: 16px;
 
-          @include mobile {
-            font-size: 14px;
-          }
         }
         p {
           font-family: "RubikRegular";
           margin-bottom: 20px;
+          font-size: 14px;
 
-          @include mobile {
-            font-size: 12px;
-          }
         }
 
         .indent {

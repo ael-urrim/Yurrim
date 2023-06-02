@@ -6,19 +6,67 @@
     background-color: themed("bgSoft");
     margin-top: -25px;
     padding: 20px 40px;
-    font-family: sans-serif;
     color: themed("textColor");
-    height: 100vh;
+    text-align: justify;
 
     @include mobile {
       padding: 20px 10px;
     }
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .terms-of-use-card {
       background-color: themed("cardColor");
-      padding: 20px;
+      padding: 20px 40px;
       border: 1px solid themed("border");
       border-radius: 8px;
+      overflow-y: scroll;
+      height: max-content;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      h2 {
+        font-family: "RubikBold";
+        font-size: 18px;
+      }
+
+      hr {
+        margin: 10px 0;
+      }
+      .body {
+        h3 {
+          font-family: "RubikSemiBold";
+          margin-bottom: 10px;
+          font-size: 16px;
+        }
+        p {
+          font-family: "RubikRegular";
+          margin-bottom: 20px;
+          font-size: 14px;
+          line-height: 1.3rem;
+        }
+
+        ul {
+          li{
+            list-style: none;
+            font-family: "RubikRegular";
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 1.3rem;
+          }
+
+          ol{
+            margin-left: 20px;
+            margin-bottom: 10px;
+            font-family: "RubikRegular";
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }

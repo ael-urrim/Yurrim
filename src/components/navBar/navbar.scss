@@ -85,30 +85,64 @@
       }
 
       .profile-img {
+
+        @include mobile {
+          display: none;
+        }
+
+        @include tablet {
+          display: none;
+        }
+
         img {
           width: 40px;
           height: 40px;
           border-radius: 50%;
           object-fit: cover;
           cursor: pointer;
-
-          @include mobile {
-            width: 30px;
-            height: 30px;
-          }
         }
-        
+
         img:focus {
           outline: none;
           background-color: transparent;
         }
-        
+
         img:active {
           outline: none !important;
           background-color: transparent !important;
         }
       }
 
+      // Mobile menu controller
+      .profile-img-mobile {
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
+
+        @include tablet {
+          display: block;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        img:focus {
+          outline: none;
+          background-color: transparent;
+        }
+
+        img:active {
+          outline: none !important;
+          background-color: transparent !important;
+        }
+      }
     }
 
     .overlay {
@@ -142,7 +176,7 @@
           border: themed("border");
           border-radius: 6px;
           width: 200px;
-          margin-top: -250px;
+          margin-top: -180px;
           margin-left: 450px;
 
           @include tablet {
@@ -166,67 +200,6 @@
           }
 
           .links:hover {
-            background-color: #087ca7;
-            color: whitesmoke;
-          }
-        }
-      }
-    }
-
-    // Mobile Menu
-    .mobile-overlay {
-      position: fixed;
-      background-color: rgba(0, 0, 0, 0);
-      z-index: 999;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition-duration: 0.4s;
-
-      @include mobile {
-        display: flex;
-      }
-
-      .mobile-dropdown-links {
-        position: fixed;
-        z-index: 88;
-
-        .mobile-dropdown {
-          position: absolute;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          background-color: themed("cardColor");
-          padding: 10px;
-          border: themed("border");
-          border-radius: 6px;
-          width: 200px;
-
-          @include mobile {
-            margin-top: -300px;
-            margin-left: -50px;
-          }
-
-          .mobile-links {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: themed("textColorSoft");
-            font-size: 16px;
-            font-family: "RubikRegular";
-            padding: 5px 10px;
-            transition-duration: 0.1s;
-
-            .mobile-icons {
-              margin-right: 10px;
-            }
-          }
-
-          .mobile-links:hover {
             background-color: #087ca7;
             color: whitesmoke;
           }

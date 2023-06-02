@@ -6,14 +6,20 @@ import { darkModeContext } from "./context/darkModeContext";
 import Navbar from "./components/navBar/Navbar";
 import Leftbar from "./components/leftBar/Leftbar";
 import Rightbar from "./components/rightBar/Rightbar";
+import HelpCenterNavbar from "./components/helpCenterNavBar/HelpCenterNavBar";
+import HelpCenterLeftbar from "./components/helpCenterLeftBar/HelpCenterLeftBar";
+import HelpCenterFooter from "./components/helpCenterFooter/HelpCenterFooter";
+import AdvertsLeftBar from "./components/advertsLeftbar/AdvertsLeftBar";
+
+// General styles
 import "./style.scss";
 
 // Fonts
-import "./fonts/Rubik-Light.ttf"
-import "./fonts/Rubik-Regular.ttf"
-import "./fonts/Rubik-Medium.ttf"
-import "./fonts/Rubik-SemiBold.ttf"
-import "./fonts/Rubik-Bold.ttf"
+import "./fonts/Rubik-Light.ttf";
+import "./fonts/Rubik-Regular.ttf";
+import "./fonts/Rubik-Medium.ttf";
+import "./fonts/Rubik-SemiBold.ttf";
+import "./fonts/Rubik-Bold.ttf";
 
 // Pages
 import Login from "./pages/login/Login";
@@ -32,7 +38,20 @@ import ContentsPolicy from "./pages/contentsPolicy/ContentsPolicy";
 import HelpCenter from "./pages/helpCenter/HelpCenter";
 import TermsOfUse from "./pages/termsOfUse/TermsOfUse";
 import AdvertisementPolicy from "./pages/advertisementPolicy/AdvertisementPolicy";
-import RunAds from "./pages/runAds/RunAds";
+import AdsOverview from "./pages/AdsOverview/AdsOverview";
+import Menu from "./pages/menuPage/Menu";
+import SupportInbox from "./pages/supportInbox/SupportInbox";
+import ContactUs from "./pages/contactUs/ContactUs";
+import HelpCenterMenu from "./pages/helpCenterMenu/HelpCenterMenu";
+import PersonalChat from "./pages/personalChat/PersonalChat";
+import AdsCampaign from "./pages/adsCampaign/AdsCampaign";
+import CreateAd from "./pages/createAd/CreateAd";
+import FundAccount from "./pages/fundAccount/FundAccount";
+import AccountSettings from "./pages/adAccountSettings/AccountSettings";
+import ReportProblem from "./pages/reportAdProblem/ReportProblem";
+import AdDetails from "./pages/adDetails/AdDetails";
+
+
 
 function App() {
   const { darkMode } = useContext(darkModeContext);
@@ -46,6 +65,33 @@ function App() {
           <Leftbar />
           <Outlet />
           <Rightbar />
+        </div>
+      </div>
+    );
+  };
+
+  // Create other page view layout
+  const HelpLayouts = () => {
+    return (
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
+        <HelpCenterNavbar />
+        <div style={{ display: "flex" }}>
+          <HelpCenterLeftbar/>
+          <Outlet />
+        </div>
+        <HelpCenterFooter/>
+      </div>
+    );
+  };
+
+  // Ads page view
+  const AdsPageLayouts = () => {
+    return (
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
+        <Navbar />
+        <div style={{ display: "flex" }}>
+          <AdvertsLeftBar/>
+          <Outlet />
         </div>
       </div>
     );
@@ -98,10 +144,6 @@ function App() {
           element: <CookiePolicy />,
         },
         {
-          path: "/help-center",
-          element: <HelpCenter />,
-        },
-        {
           path: "/contents-policy",
           element: <ContentsPolicy />,
         },
@@ -114,8 +156,72 @@ function App() {
           element: <AdvertisementPolicy />,
         },
         {
+          path: "/menu",
+          element: <Menu />,
+        },
+        {
+          path: "/support-inbox",
+          element: <SupportInbox />,
+        },
+        {
+          path: "/personal-chat/:id",
+          element: <PersonalChat />,
+        },
+      ],
+    },
+
+    // other layouts
+    {
+      path: "/",
+      element: <HelpLayouts />,
+      children: [
+        {
+          path: "/contact-us",
+          element: <ContactUs />,
+        },
+        {
+          path: "/help-center",
+          element: <HelpCenter />,
+        },
+        {
+          path: "/help-center-menu",
+          element: <HelpCenterMenu />,
+        },
+      ],
+    },
+
+    // Ads page layout
+    {
+      path: "/",
+      element: <AdsPageLayouts />,
+      children: [
+        {
+          path: "/ads-overview/:id",
+          element: <AdsOverview />,
+        },
+        {
+          path: "/campaigns/:id",
+          element: <AdsCampaign />,
+        },
+        {
           path: "/create-ad",
-          element: <RunAds />,
+          element: <CreateAd />,
+        },
+        {
+          path: "/fund-account/:id",
+          element: <FundAccount />,
+        },
+        {
+          path: "/ad-details/:id",
+          element: <AdDetails />,
+        },
+        {
+          path: "/account-settings/:id",
+          element: <AccountSettings />,
+        },
+        {
+          path: "/report-ad-problem",
+          element: <ReportProblem />,
         },
       ],
     },

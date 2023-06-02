@@ -2,8 +2,8 @@
 
 $themes: (
   light: (
-    primary: "#087CA7",
-    secondary: "#05B2DC",
+    primary: #087ca7,
+    secondary: #05B2DC,
     textColor: #000,
     bg: #fff,
     logo: #087ca7,
@@ -17,11 +17,14 @@ $themes: (
     inputColor: rgb(134, 134, 134),
     hoverColor: whitesmoke,
     buttonBg: #087CA7,
-    buttonBgHover: #05B2DC
+    buttonBgHover: #05B2DC,
+    white: #ffffff,
+    links: #087ca7,
+    linkHover: #818181,
   ),
   dark: (
-    primary: "#087CA7",
-    secondary: "#05B2DC",
+    primary: #087CA7,
+    secondary: #05B2DC,
     textColor: whitesmoke,
     bg: #222,
     logo: white,
@@ -36,7 +39,10 @@ $themes: (
     inputColor: lightgray,
     hoverColor: whitesmoke,
     buttonBg: #087CA7,
-    buttonBgHover: #05B2DC
+    buttonBgHover: #05B2DC,
+    white: #ffffff,
+    links: #087ca7,
+    linkHover: #818181,
   ),
 );
 

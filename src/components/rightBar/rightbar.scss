@@ -54,7 +54,6 @@
             .heading {
                 font-family: "RubikRegular";
                 font-size: 16px;
-                font-weight: normal;
             }
 
             .sample-img {
@@ -70,8 +69,7 @@
             }
 
             p {
-                font-size: 18px;
-                font-weight: 550;
+                font-size: 16px;
                 font-family: "RubikBold";
             }
 
@@ -81,8 +79,7 @@
                 padding: 10px 15px;
                 border-radius: 10px;
                 background-color: themed("buttonBg");
-                font-weight: 550;
-                font-size: 17px;
+                font-size: 14px;
                 font-family: "RubikBold";
             }
 
@@ -99,6 +96,7 @@
             padding: 10px 10px;
             margin-bottom: 20px;
             font-family: "RubikRegular";
+            background-color: transparent;
 
             .links {
                 font-size: 13px;

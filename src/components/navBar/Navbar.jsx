@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-// import "../../main.scss";
+
 import "./navbar.scss";
 import { BsFillMoonFill, BsSunFill, BsSearch } from "react-icons/bs";
-import { FaUserAlt, FaSignOutAlt, FaUserFriends } from "react-icons/fa";
+import { FaUserAlt, FaSignOutAlt } from "react-icons/fa";
 import { RiAdvertisementFill } from "react-icons/ri";
 import { AiFillSetting } from "react-icons/ai";
-import { MdOutlineHelp, MdNotifications } from "react-icons/md";
+import { MdOutlineHelp } from "react-icons/md";
 import { HiMail } from "react-icons/hi";
 import PROFILE_IMG from "../../media/images/default.jpg";
 import { useContext, useState } from "react";
@@ -47,64 +47,39 @@ const Navbar = () => {
         <div className="profile-img" onClick={toggleDropDown}>
           <img src={PROFILE_IMG} alt="" />
         </div>
+
+        {/* Mobile menu */}
+        <div className="profile-img-mobile">
+          <Link to="/menu">
+            <img src={PROFILE_IMG} alt="" />
+          </Link>
+        </div>
       </div>
 
       {openMenuDropdown && (
-          <div className="overlay" onClick={toggleDropDown}>
-            <div className="dropdown-links">
-              <div className="dropdown">
-                <Link to="/profile/2" className="links">
-                  <FaUserAlt className="icons" /> Profile
-                </Link>
-                <Link to="/settings/4" className="links">
-                  <AiFillSetting className="icons" /> Settings
-                </Link>
-                <Link to="/create-ad" className="links">
-                  <RiAdvertisementFill className="icons" />
-                  Create Ads
-                </Link>
-                <Link to="/help-center" className="links">
-                  <MdOutlineHelp className="icons" /> Help And Feedback
-                </Link>
-                <Link to="/login" className="links">
-                  <FaSignOutAlt className="icons" /> Log Out
-                </Link>
-              </div>
+        <div className="overlay" onClick={toggleDropDown}>
+          <div className="dropdown-links">
+            <div className="dropdown">
+              <Link to="/profile/2" className="links">
+                <FaUserAlt className="icons" /> Profile
+              </Link>
+              <Link to="/settings/4" className="links">
+                <AiFillSetting className="icons" /> Settings
+              </Link>
+              <Link to="/ads-overview/2" className="links">
+                <RiAdvertisementFill className="icons" />
+                Create Ads
+              </Link>
+              <Link to="/help-center" className="links">
+                <MdOutlineHelp className="icons" /> Help And Feedback
+              </Link>
+              <Link to="/login" className="links">
+                <FaSignOutAlt className="icons" /> Log Out
+              </Link>
             </div>
           </div>
-        )}
-
-        {/* Mobile menu */}
-        {openMenuDropdown && (
-          <div className="mobile-overlay" onClick={toggleDropDown}>
-            <div className="mobile-dropdown-links">
-              <div className="mobile-dropdown">
-                <Link to="/profile/2" className="mobile-links">
-                  <FaUserAlt className="mobile-icons" /> Profile
-                </Link>
-                <Link to="/interactions/2" className="mobile-links">
-                  <FaUserFriends className="mobile-icons" /> Interactions
-                </Link>
-                <Link to="/notifications/2" className="mobile-links">
-                  <MdNotifications className="mobile-icons" /> Notifications
-                </Link>
-                <Link to="/settings/4" className="mobile-links">
-                  <AiFillSetting className="mobile-icons" /> Settings
-                </Link>
-                <Link to="/create-ad" className="mobile-links">
-                  <RiAdvertisementFill className="mobile-icons" />
-                  Create Ads
-                </Link>
-                <Link to="/help-center" className="mobile-links">
-                  <MdOutlineHelp className="mobile-icons" /> Help And Feedback
-                </Link>
-                <Link to="/login" className="mobile-links">
-                  <FaSignOutAlt className="mobile-icons" /> Log Out
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
+        </div>
+      )}
     </div>
   );
 };

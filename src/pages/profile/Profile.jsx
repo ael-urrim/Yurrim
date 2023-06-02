@@ -6,7 +6,6 @@ import USER2 from "../../media/images/user2.jpg";
 import USER3 from "../../media/images/user3.jpg";
 import USER4 from "../../media/images/user4.jpg";
 
-
 import { Link } from "react-router-dom";
 import VERIFIED from "../../media/icons/verified.png";
 import Posts from "../../components/posts/Posts";
@@ -126,13 +125,13 @@ const Profile = () => {
           </div>
         </div>
         <div className="profile-activities">
-          <div className="following">
+          <div className="following activities">
             <strong>200</strong> Following
           </div>
-          <div className="follower">
+          <div className="follower activities">
             <strong>2500</strong> Followers
           </div>
-          <div className="likes">
+          <div className="likes activities">
             <strong>500</strong> Likes
           </div>
         </div>
@@ -155,14 +154,14 @@ const Profile = () => {
         <hr />
       </div>
 
-      {activeTab === "posts" && (
-        <div className="tab-content posts show">
-          {posts.map((post) => (
-            <Posts post={post} key={post.postId} />
-          ))}
-        </div>
-      )}
       <div className="body">
+        {activeTab === "posts" && (
+          <div className="tab-content posts show">
+            {posts.map((post) => (
+              <Posts post={post} key={post.postId} />
+            ))}
+          </div>
+        )}
         {activeTab === "photos" && (
           <div className="tab-content photos show">
             {photos.map((photo) => (

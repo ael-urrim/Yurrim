@@ -1,0 +1,234 @@
+@import "../../style.scss";
+
+.fund-account {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    color: themed("textColor");
+    margin-left: 280px;
+    font-family: "RubikRegular";
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      margin-bottom: 10px;
+
+      .left {
+        h2 {
+          font-family: "RubikSemiBold";
+          font-size: 18px;
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .balance {
+          p {
+            font-family: "RubikLight";
+            margin-bottom: 5px;
+          }
+
+          h3 {
+            font-family: "RubikRegular";
+          }
+        }
+
+        .pay-btn {
+          padding: 10px;
+          color: #fff;
+          background-color: themed("buttonBg");
+          cursor: pointer;
+          transition-duration: 0.3s;
+          border-radius: 5px;
+        }
+
+        .pay-btn:hover {
+          background-color: themed("buttonBgHover");
+        }
+      }
+    }
+
+    .payment-popup {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .payment-card {
+        padding: 20px;
+        background-color: themed("cardColor");
+        width: 350px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        position: relative;
+
+        @include mobile {
+          width: 250px;
+          height: max-content;
+        }
+
+        .close-btn {
+          color: themed("textColorSoft");
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+          padding: 3px;
+          border: 1px solid themed("borderTwo");
+          margin: 0;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+
+        p {
+          margin-bottom: 10px;
+          color: themed("textColorSoft");
+          font-family: "RubikRegular";
+          font-size: 18px;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+
+          .payment-field {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+
+            label {
+              font-size: 14px;
+              font-family: "RubikMedium";
+              margin-bottom: 5px;
+            }
+
+            select {
+              padding: 10px;
+              outline: none;
+              font-family: "RubikRegular";
+            }
+
+            input {
+              font-family: "RubikRegular";
+              padding: 10px;
+              outline: none;
+              border: none;
+              border-bottom: 1px solid themed("border");
+              margin-bottom: 20px;
+            }
+          }
+
+          button {
+            cursor: pointer;
+            color: #fff;
+            border: themed("border");
+            border-radius: 5px;
+            height: 30px;
+            transition-duration: 0.2s;
+            background-color: themed("buttonBg");
+            font-size: 16px;
+            font-weight: 550;
+          }
+
+          button:hover {
+            background-color: themed("buttonBgHover");
+          }
+        }
+      }
+    }
+
+    .fund-account-card {
+      background-color: themed("cardColor");
+      padding: 10px;
+      overflow-y: scroll;
+      height: max-content;
+      border: 1px solid themed("border");
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        h3 {
+          margin: 10px;
+          font-size: 14px;
+        }
+
+        input {
+          font-family: "RubikRegular";
+          padding: 10px;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid themed("border");
+          margin-bottom: 20px;
+        }
+      }
+
+      table {
+        width: 100%;
+        border: 1px solid themed("border");
+        border-collapse: collapse;
+
+        thead {
+          th {
+            border: 1px solid themed("border");
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+          }
+        }
+
+        tbody {
+          td {
+            border: 1px solid themed("border");
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+
+            div {
+              padding: 10px;
+              background-color: rgb(190, 8, 8);
+              color: #fff;
+              text-align: center;
+              border-radius: 5px;
+              cursor: pointer;
+              transition-duration: 0.3s;
+            }
+
+            div:hover {
+              background-color: rgb(148, 8, 8);
+            }
+          }
+        }
+      }
+    }
+  }
+}

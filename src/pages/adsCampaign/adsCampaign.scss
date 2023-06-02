@@ -1,0 +1,159 @@
+@import "../../style.scss";
+
+.ads-campaign {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    color: themed("textColor");
+    height: 100vh;
+    margin-left: 280px;
+    font-family: "RubikRegular";
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      margin-bottom: 10px;
+
+      h2 {
+        font-family: "RubikSemiBold";
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 16px;
+        font-family: "RubikRegular";
+      }
+    }
+
+    .ads-campaign-card {
+      background-color: themed("cardColor");
+      padding: 10px;
+      border: 1px solid themed("border");
+
+      .create {
+        width: 110px;
+        margin: 10px 0;
+
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: themed("buttonBg");
+          padding: 10px 15px;
+          border-radius: 5px;
+          color: #ffffff;
+          transition-duration: 0.3s;
+          text-decoration: none;
+
+          .icon {
+            font-size: 18px;
+          }
+        }
+
+        .link:hover {
+          background-color: themed("buttonBgHover");
+        }
+      }
+
+      table {
+        width: 100%;
+        border: 1px solid themed("border");
+        border-collapse: collapse;
+
+        .select{
+          cursor: pointer;
+          height: 20px;
+          width: 20px;
+        }
+
+        thead{
+          th{
+            border: 1px solid themed("border");
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+          }
+        }
+
+        tbody {
+          td{
+            border: 1px solid themed("border");
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+
+            .link {
+              color: themed("secondary");
+              text-decoration: none;
+            }
+            
+            .link:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+          }
+
+          .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 34px;
+          }
+
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 50%;
+          }
+
+          input:checked + .slider {
+            background-color: #2196f3;
+          }
+
+          input:focus + .slider {
+            box-shadow: 0 0 1px #2196f3;
+          }
+
+          input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+          }
+        }
+      }
+    }
+  }
+}

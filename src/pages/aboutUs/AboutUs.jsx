@@ -10,7 +10,7 @@ const AboutUs = () => {
           <p>
             Welcome to Yurrim: Connecting the World, Owned by Rakmod
             Technologies
-          </p><br />
+          </p>
 
           <p>
             Yurrim is a vibrant social media platform owned by Rakmod
@@ -20,7 +20,7 @@ const AboutUs = () => {
             belonging in the digital world. We understand the power of social
             networks in bringing people closer, breaking barriers, and building
             communities that thrive on collaboration and positive engagement.
-          </p><br />
+          </p>
 
           <h3>Our Vision:</h3>
           <p>

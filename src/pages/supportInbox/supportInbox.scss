@@ -1,6 +1,6 @@
 @import "../../style.scss";
 
-.run-ads {
+.support-inbox {
   @include themify($themes) {
     flex: 2;
     background-color: themed("bgSoft");
@@ -14,7 +14,7 @@
       padding: 20px 10px;
     }
 
-    .run-ads-card {
+    .support-inbox-card {
       background-color: themed("cardColor");
       padding: 20px;
       border: 1px solid themed("border");

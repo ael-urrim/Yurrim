@@ -19,7 +19,7 @@ const Rightbar = () => {
           <img src={ADVERTS3} alt="" />
         </div>
         <p>Claim $100 free ads credit</p>
-        <Link to="/advertise" className="links">
+        <Link to="/create-ad" className="links">
           Claim $100 now
         </Link>
       </div>

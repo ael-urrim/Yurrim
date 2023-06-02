@@ -1,0 +1,113 @@
+@import "../../style.scss";
+
+.report-problem {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    color: themed("textColor");
+    margin-left: 280px;
+    font-family: "RubikRegular";
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      margin-bottom: 10px;
+
+      h2 {
+        font-family: "RubikSemiBold";
+        font-size: 18px;
+      }
+    }
+
+    .report-problem-card {
+      display: flex;
+      gap: 10px;
+      background-color: themed("cardColor");
+      padding: 10px 20px;
+      overflow-y: scroll;
+      min-height: max-content;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      p {
+        font-family: "RubikRegular";
+        margin-bottom: 20px;
+        font-size: 16px;
+
+        small {
+          text-decoration: underline;
+          font-size: 16px;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-family: "RubikMedium";
+          margin-bottom: 5px;
+        }
+
+        input {
+          width: 70%;
+          margin-bottom: 20px;
+          height: 10px;
+          padding: 10px;
+          border: 0;
+          border-bottom: 1px solid themed("border");
+          outline: none;
+          background-color: transparent;
+          color: themed("textColor");
+          font-family: "RubikLight";
+          font-size: 15px;
+        }
+
+        textarea {
+          margin-bottom: 20px;
+          resize: none;
+          outline: none;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid themed("border");
+          background-color: transparent;
+          color: themed("textColor");
+          font-family: "RubikLight";
+          font-size: 15px;
+        }
+
+        button {
+            background-color: themed("buttonBg");
+            width: fit-content;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-family: "RubikSemiBold";
+            font-size: 18px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+
+        button:hover {
+            background-color: themed("buttonBgHover");
+        }
+      }
+      
+    }
+  }
+}

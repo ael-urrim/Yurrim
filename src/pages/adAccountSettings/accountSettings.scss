@@ -1,0 +1,92 @@
+@import "../../style.scss";
+
+.account-settings {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    color: themed("textColor");
+    margin-left: 280px;
+    font-family: "RubikRegular";
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      margin-bottom: 10px;
+
+      h2 {
+        font-family: "RubikSemiBold";
+        font-size: 18px;
+      }
+    }
+
+    .account-settings-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: themed("cardColor");
+      padding: 10px 20px;
+      overflow-y: scroll;
+      min-height: max-content;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .contact {
+        margin-bottom: 20px;
+
+        p {
+          font-family: "RubikSemiBold";
+          margin-bottom: 10px;
+          color: Themed("textColor");
+        }
+
+        input {
+          font-family: "RubikRegular";
+          padding: 10px;
+          border-radius: 5px;
+          outline: none;
+          color: themed("textColor");
+          border: 1px solid themed("border");
+          background-color: transparent;
+        }
+      }
+
+      .notification {
+        p{
+          font-family: "RubikSemiBold";
+          margin-bottom: 20px;
+        }
+
+        .notif-preference {
+          display: flex;
+          gap: 10px;
+          align-items: baseline;
+
+          p {
+            font-family: "RubikRegular";
+            margin-bottom: 10px;
+            color: Themed("textColor");
+          }
+
+          input {
+            height: 15px;
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+}

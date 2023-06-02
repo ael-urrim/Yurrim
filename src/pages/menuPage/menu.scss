@@ -1,0 +1,65 @@
+@import "../../style.scss";
+
+.menu {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 40px;
+    color: themed("textColor");
+    height: 100vh;
+    overflow-x: hidden;
+    
+    &::-webkit-scrollbar {
+        display: none;
+      }
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .menu-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 8px;
+      overflow-y: scroll;
+      max-height: 600px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .heading {
+        font-family: "RubikBold";
+        margin-bottom: 10px;
+      }
+
+      .menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-family: "RubikRegular";
+        font-size: 16px;
+
+        .mobile-links{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: themed("textColor");
+
+            .mobile-icons {
+                color: themed("iconsColor");
+                font-size: 16px;
+            }
+        }
+      }
+    }
+  }
+}

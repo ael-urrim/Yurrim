@@ -1,0 +1,268 @@
+@import "../../style.scss";
+
+.create-ad {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    color: themed("textColor");
+    margin-left: 280px;
+    font-family: "RubikRegular";
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      margin-bottom: 10px;
+
+      h2 {
+        font-family: "RubikSemiBold";
+        font-size: 18px;
+      }
+    }
+
+    .create-ad-card {
+      display: flex;
+      gap: 10px;
+      background-color: transparent;
+      padding: 10px;
+      overflow-y: scroll;
+      min-height: max-content;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .left {
+        flex: 2;
+        background-color: themed("cardColor");
+        height: max-content;
+        padding: 10px;
+        border: 1px solid themed("border");
+        border-radius: 8px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          width: 90%;
+
+          .ad-queries {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            label {
+              font-family: "RubikMedium";
+            }
+
+            input {
+              padding: 10px;
+              outline: none;
+              background-color: transparent;
+              border: 1px solid gray;
+              border-radius: 3px;
+              font-size: 14px;
+              font-family: "RubikRegular";
+              color: themed("textColor");
+            }
+
+            textarea {
+              padding: 10px;
+              outline: none;
+              background-color: transparent;
+              border: 1px solid gray;
+              border-radius: 3px;
+              font-size: 14px;
+              font-family: "RubikRegular";
+              color: themed("textColor");
+              resize: none;
+            }
+
+            select {
+              padding: 10px;
+              outline: none;
+              background-color: transparent;
+              border: 1px solid gray;
+              border-radius: 3px;
+              font-size: 14px;
+              font-family: "RubikRegular";
+              color: themed("textColor");
+            }
+          }
+
+          button {
+            width: 200px;
+            padding: 10px;
+            font-family: "RubikMedium";
+            font-size: 18px;
+            background-color: themed("buttonBg");
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            transition-duration: 0.3s;
+          }
+
+          button:hover {
+            background-color: themed("buttonBgHover");
+          }
+        }
+      }
+
+      .right {
+        flex: 1.3;
+        background-color: themed("cardColor");
+        height: max-content;
+        padding: 10px;
+        border: 1px solid themed("border");
+        border-radius: 8px;
+        position: sticky;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .top {
+          p {
+            font-family: "RubikRegular";
+            font-size: 14px;
+          }
+        }
+
+        hr {
+          margin: 10px 0;
+        }
+
+        .bottom {
+          border: 1px solid themed("border");
+          border-radius: 5px;
+          padding: 10px;
+
+          .top {
+            display: flex;
+            gap: 5px;
+
+            .right-left {
+              img {
+                border-radius: 0 10px;
+                object-fit: cover;
+                width: 50px;
+                height: 50px;
+              }
+            }
+
+            .right-right {
+              .authorDetails {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .authorDetails-top {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+
+                  .authorName {
+                    font-family: "RubikSemiBold";
+                    font-size: 16px;
+                  }
+
+                  p {
+                    font-size: 16px;
+                  }
+                }
+
+                .authorDetails-bottom {
+                  p {
+                    margin-left: 0;
+                    font-family: "RubikRegular";
+                    font-size: 14px;
+                  }
+                }
+              }
+
+              .adDetails {
+                .adDescription {
+                  font-family: "RubikRegular";
+                  font-size: 14px;
+                  margin: 5px 0;
+                }
+
+                img {
+                  width: 95%;
+                  height: 300px;
+                }
+                .ad-link {
+                  display: flex;
+                  align-items: center;
+                  width: 89%;
+                  background-color: themed("bgSoft");
+                  color: themed("textColor");
+                  padding: 10px;
+                  margin-bottom: 10px;
+                  margin-top: -5px;
+                  font-family: "RubikRegular";
+
+                  .ad-link-left {
+                    flex: 2;
+                    .one {
+                      margin-bottom: 5px;
+                      font-size: 12px;
+                    }
+
+                    .two {
+                      font-size: 14px;
+                    }
+                  }
+
+                  .ad-link-right {
+                    flex: 0.5;
+                    padding: 5px 10px;
+                    background-color: #b6b6b6;
+                    color: themed("textColor");
+                    font-size: 14px;
+                    border-radius: 5px;
+                    font-family: calibri;
+                  }
+                }
+              }
+
+              .post-reactions {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                margin-bottom: 10px;
+
+                .icon {
+                  font-size: 24px;
+                }
+              }
+            }
+          }
+
+          p {
+            margin-left: 20px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../style.scss";
+
+.HelpCenterMenu {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    color: themed("textColor");
+    height: max-content;
+    overflow-y: scroll;
+    margin-top: -25px;
+    padding: 20px 10px;
+    overflow: auto;
+
+    .card-one {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 8px;
+
+      .link {
+        display: flex;
+        align-items: center;
+        color: themed("textColor");
+        text-decoration: none;
+        font-size: 18px;
+        font-family: "RubikRegular";
+        margin-bottom: 20px;
+
+        .icons {
+          color: themed("iconsColor");
+          font-size: 20px;
+          margin-right: 10px;
+        }
+      }
+
+      .link:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
