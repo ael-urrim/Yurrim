@@ -1,7 +1,12 @@
 import "./postdetails.scss";
 
 // Icons
-import { FaEllipsisH, FaRegCommentAlt, FaRegEye, FaReplyAll } from "react-icons/fa";
+import {
+  FaEllipsisH,
+  FaRegCommentAlt,
+  FaRegEye,
+  FaReplyAll,
+} from "react-icons/fa";
 import {
   BsHeart,
   BsShare,
@@ -35,7 +40,6 @@ const PostDetails = () => {
     setOpenPopup(!openPopup);
   };
 
-  
   // For options popup
   const [openOptions, setOpenOptions] = useState(false);
   const toggleOptions = () => {
@@ -149,7 +153,7 @@ const PostDetails = () => {
                 </Link>
               </div>
               <div
-              style={{display:"flex", alignItems:"baseline"}}
+                style={{ display: "flex", alignItems: "baseline" }}
                 className="comments post-reactions"
                 title="Comment"
                 onClick={toggleModal}
@@ -228,10 +232,11 @@ const PostDetails = () => {
                 <div className="middle">
                   <div className="post-text">{comment.content}</div>
                   <div className="post-img">
-                    <img
-                      src={comment.commentImg ? comment.commentImg : null}
-                      alt=""
-                    />
+                    {comment.commentImg ? (
+                      <img src={comment.commentImg} alt="" />
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
                 <div className="bottom">
